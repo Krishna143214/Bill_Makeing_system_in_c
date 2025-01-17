@@ -6,15 +6,17 @@ int main() {
     char name[50];
     char ph_no[30];
     char cstm_id[30];
-
+    char shop_name[50];
+    char print_file[60];
+    char permanent_store[70];
     int baby_soap = 0, body_lotion = 0, hair_spray = 0, deo = 0;
     int sugar = 0, flour = 0, cooking_oil = 0, rice = 0, pulses = 0, spices = 0;
     int cold_coffee = 0, coke = 0, thums_up = 0, sprite = 0, limca = 0, mazza = 0;
 
     int total = 0, cosmetic_total = 0, grocery_total = 0, beverages_total = 0;
 
-    
-        system("clear");
+    system("cls");
+        
 
         printf("  ₹₹₹₹₹₹₹₹____####____BILLING MACHINE____####____₹₹₹₹₹₹₹₹₹₹\n\n");
         printf("Customer Details:\n\n");
@@ -27,8 +29,18 @@ int main() {
 
         printf("\nCustomer ID: ");
         scanf("%s", &cstm_id);
+        
+        
+       
+       
+FILE *ptr=fopen("for_print.txt","w+");
+ FILE *fp=fopen("invoice_storage.txt","a+");
 
-        printf("-----------------------------------------------------\n");
+if(ptr==NULL ||fp==NULL){
+        printf("file  not allocated\n");
+}
+        
+        printf("\n-----------------------------------------------------\n");
 
         while (1) {
             printf("###### Product Category ########\n\n");
@@ -71,14 +83,16 @@ int main() {
                         break;
                     } else {
                         printf("Invalid option! Try again.\n");
+                       
                     }
                 }
             } else if (ch == 2) { // Grocery
                 while (1) {
-                    printf("\nYou chose Grocery:\n\n");
+                    printf("\nYou chose Grocery:o\n\n");
                     printf("Products:\n");
                     printf("1. Sugar ₹40\n");
-                    printf("2. Flour ₹23\n");
+
+                                        printf("2. Flour ₹23\n");
                     printf("3. Cooking Oil ₹180\n");
                     printf("4. Rice ₹70\n");
                     printf("5. Pulses ₹140\n");
@@ -156,7 +170,11 @@ int main() {
             } else if (ch == 4) { // Checkout
                 printf("\nProceeding to Checkout...\n");
                 break;
-            } else {
+            }
+           
+            
+             
+               else {
                 printf("Invalid option! Try again.\n");
             }
         }
@@ -191,10 +209,228 @@ int main() {
     
     
     total=cosmetic_total+grocery_total+beverages_total;
-    printf("%d",total);
     
-    int c;
-    scanf("%d",&c);
+   
+   printf("\n------------------------------------------------------------\n");
+   printf("\n------------------------------------------------------------\n");
+   printf("\n------------------------------------------------------------\n");
+   fprintf(ptr,"\n------------------------------------------------------------\n");
+     fprintf(ptr,"\n------------------------------------------------------------\n");
+       fprintf(ptr,"\n------------------------------------------------------------\n");
+      fprintf(fp,"\n------------------------------------------------------------\n");
+        fprintf(fp,"\n------------------------------------------------------------\n");
+          fprintf(fp,"\n------------------------------------------------------------\n");
+
+   
+   printf("\n      ########### Welcome To %s Kirana Store ##########\n\n", name);
+   
+     fprintf(ptr,"\n      ########### Welcome To %s Kirana Store ##########\n\n", name);
+        fprintf(fp,"\n      ########### Welcome To %s Kirana Store ##########\n\n", name);
+   
+   printf("Custumer name :- %s\n\n",name);
+
+
+fprintf(ptr,"Custumer name :- %s\n\n",name);
+fprintf(fp,"Custumer name :- %s\n\n",name);
+   
+   
+   printf("Custumer Phone  no :- %s\n\n",ph_no);
+    
+     
+         fprintf(ptr,"Custumer Phone  no :- %s\n\n",ph_no);
+         fprintf(fp,"Custumer Phone  no :- %s\n\n",ph_no);
+   
+   
+   printf("Custumer ID :- %s\n\n",cstm_id);
+    
+      
+   fprintf(ptr,"Custumer ID :- %s\n\n",cstm_id);
+   fprintf(fp,"Custumer ID :- %s\n\n",cstm_id);
+   
+   
+   printf("\n------------------------------------------------------------\n\n");
+   printf("\n------------------------------------------------------------\n\n");
+   
+   
+   
+   fprintf(ptr,"\n------------------------------------------------------------\n\n");
+   fprintf(fp,"\n------------------------------------------------------------\n\n");
+   
+   
+   
+    printf(" Product                Quantity                 Price\n\n");
+    
+     fprintf(ptr," Product                Quantity                 Price\n\n");
+     
+      fprintf(fp," Product                Quantity                 Price\n\n");
+      
+      
+    if(baby_soap>0){
+ printf(" baby_soap               %d                          %d\n\n",baby_soap,boso);
+ 
+ 	 fprintf(ptr," baby_soap               %d                          %d\n\n",baby_soap,boso);
+ 	 
+ 	 	 fprintf(fp," baby_soap               %d                          %d\n\n",baby_soap,boso);	}
+    
+    
+  if(body_lotion>0){
+ printf(" body_lotion               %d                        %d\n\n",body_lotion,bolo);
+ 
+ 	fprintf(ptr," body_lotion               %d                        %d\n\n",body_lotion,bolo);
+ 	
+ 		fprintf(fp," body_lotion               %d                        %d\n\n",body_lotion,bolo);	}
+ 
+     
+  if(hair_spray>0){
+ printf(" hair_spray               %d                         %d\n\n",hair_spray,hasp);
+ 
+ 	fprintf(ptr," hair_spray               %d                         %d\n\n",hair_spray,hasp);
+ 	
+ 		fprintf(fp," hair_spray               %d                         %d\n\n",hair_spray,hasp);	}
+ 
+   if(deo>0){
+ printf(" deo                       %d                        %d\n\n",deo,d);
+ 
+ 	fprintf(ptr," deo                       %d                        %d\n\n",deo,d);
+ 	
+ 		fprintf(fp," deo                       %d                        %d\n\n",deo,d);	}
+ 
+  if(sugar>0){
+ printf(" sugar                     %d                        %d\n\n",sugar,sg);
+ 
+ 	fprintf(ptr," sugar                     %d                        %d\n\n",sugar,sg);
+ 	
+ 		fprintf(fp," sugar                     %d                        %d\n\n",sugar,sg);	}
+ 
+     if(flour>0){
+ printf(" flour                     %d                        %d\n\n",flour,fr);
+ 
+ 	fprintf(ptr," flour                     %d                        %d\n\n",flour,fr);
+ 	
+ 		fprintf(fp," flour                     %d                        %d\n\n",flour,fr);	}     
+ 
+     if(cooking_oil>0){
+ printf(" cooking_oil               %d                        %d\n\n",cooking_oil,co_oil);
+ 
+ 	fprintf(ptr," cooking_oil               %d                        %d\n\n",cooking_oil,co_oil);
+ 	
+ 		fprintf(fp," cooking_oil               %d                        %d\n\n",cooking_oil,co_oil);	}     
+ 
+      
+     if(rice>0){
+ printf(" rice                      %d                        %d\n\n",rice,ri);
+ 
+ 	 fprintf(ptr," rice                      %d                        %d\n\n",rice,ri);
+ 	 
+ 	  fprintf(fp," rice                      %d                        %d\n\n",rice,ri);		}     
+ 
+   if(pulses>0){
+ printf(" pulses                    %d                        %d\n\n",pulses,pul);
+ 
+ 	 fprintf(ptr," pulses                    %d                        %d\n\n",pulses,pul);
+ 	 
+ 	 	 fprintf(fp," pulses                    %d                        %d\n\n",pulses,pul);	}   
+ 
+    if(spices>0){
+ printf(" spices                    %d                        %d\n\n",spices,sp);
+ 
+ 	 fprintf(ptr," spices                    %d                        %d\n\n",spices,sp);
+ 	 
+ 	 	 fprintf(fp," spices                    %d                        %d\n\n",spices,sp);	}   
+ 
+ 
+  if(cold_coffee>0){
+ printf(" cold_coffee               %d                        %d\n\n",cold_coffee,cofe);
+ 
+ 	 fprintf(ptr," cold_coffee               %d                        %d\n\n",cold_coffee,cofe);
+ 	 
+ 	 	 fprintf(fp," cold_coffee               %d                        %d\n\n",cold_coffee,cofe);	}    
+ 
+   
+ if(coke>0){
+ printf(" coke                      %d                        %d\n\n",coke,ck);
+ 
+ 	fprintf(ptr," coke                      %d                        %d\n\n",coke,ck);
+ 	
+ 		fprintf(fp," coke                      %d                        %d\n\n",coke,ck);	}  
+ 
+  if(thums_up>0){
+ printf(" thums                     %d                        %d\n\n",thums_up,thuup);
+ 
+ 	 fprintf(ptr," thums                     %d                        %d\n\n",thums_up,thuup);
+ 	 
+ 	 	 fprintf(fp," thums                     %d                        %d\n\n",thums_up,thuup);	}     
+ 
+   if(sprite>0){
+ printf(" sprite                    %d                        %d\n\n",sprite,spr);
+ 
+ 	fprintf(ptr," sprite                    %d                        %d\n\n",sprite,spr);
+ 	
+ 		fprintf(fp," sprite                    %d                        %d\n\n",sprite,spr);	}     
+ 
+ if(limca>0){
+ printf(" limca                     %d                        %d\n\n",limca,lica);
+ 
+ 	fprintf(ptr," limca                     %d                        %d\n\n",limca,lica);
+ 	
+ 		fprintf(fp," limca                     %d                        %d\n\n",limca,lica);	}   
+ 
+ if(mazza>0){
+ printf(" mazza                     %d                        %d\n\n",mazza,maza);
+ 
+ 	fprintf(ptr," mazza                     %d                        %d\n\n",mazza,maza);
+ 	
+ 		fprintf(fp," mazza                     %d                        %d\n\n",mazza,maza);	} 
+ 
+   printf("\n------------------------------------------------------------\n\n");
+      printf("\n------------------------------------------------------------\n\n");
+      
+         fprintf(ptr,"\n------------------------------------------------------------\n\n");
+      fprintf(fp,"\n------------------------------------------------------------\n\n");
+      
+      
+   printf("Cosmetic Total :- %d\n",cosmetic_total);
+   printf("Grocery Total :- %d\n",grocery_total);
+   printf("Beverages Total :- %d\n",beverages_total);
+   printf("Gross Total :- %d\n",total);
+   
+   
+   fprintf(ptr,"Cosmetic Total :- %d\n",cosmetic_total);
+   fprintf(ptr,"Grocery Total :- %d\n",grocery_total);
+   fprintf(ptr,"Beverages Total :- %d\n",beverages_total);
+   fprintf(ptr,"Gross Total :- %d\n",total);
+   
+   
+   
+   fprintf(fp,"Cosmetic Total :- %d\n",cosmetic_total);
+   fprintf(fp,"Grocery Total :- %d\n",grocery_total);
+   fprintf(fp,"Beverages Total :- %d\n",beverages_total);
+   fprintf(fp,"Gross Total :- %d\n",total);
+   
+   
+      printf("\n------------------------------------------------------------\n\n");
+       printf("\n------------------------------------------------------------\n\n");
+       
+       
+       
+       fprintf(ptr,"\n------------------------------------------------------------\n\n");
+       fprintf(fp,"\n------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n");
+       
+       
+       fprintf(ptr,"\n------------------------------------------------------------\n\n");
+       fprintf(fp,"\n------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n");
+       
+       fclose(ptr);
+       fclose(fp);
+ 
+char a[50];
+ printf("\nEnter Any Keyword For Next Invoice\n");
+ scanf("%s",a);
+ 
+ scanf("%d",&a);
+
+   
     }
+    
     return 0;
-}
+}        
